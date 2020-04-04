@@ -63,4 +63,12 @@
             $this->MahasiswaModel->update_data($where, $data, 'mahasiswa');
             redirect(base_url() . "MahasiswaController", 'refresh');
         }
+
+        function hapus($id) {
+            $where = array('nim' => $id);
+
+            //lakukan hapus data
+            $this->MahasiswaModel->hapus_data($where, 'mahasiswa');
+            redirect(base_url() . "MahasiswaController", 'refresh');
+        }
     }
