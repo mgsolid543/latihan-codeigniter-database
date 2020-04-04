@@ -36,4 +36,31 @@
             $this->MahasiswaModel->insert($data);
             redirect(base_url() . "MahasiswaController", 'refresh');
         }
+
+        function form_update($id) {
+            $where = array('nim' => $id);
+            $data['mahasiswa'] = $this->MahasiswaModel->edit_data($where, 'mahasiswa')->result();
+
+            //tampilkan form update
+            $this->load->view('header');		
+            $this->load->view('FormEditMahasiswaView', $data);	 
+		    $this->load->view('footer');
+        }
+
+        function update() {
+            $data = array(
+                'nim' => $this->input->post('nim'),
+                'nama_lengkap' => $this->input->post('nama_lengkap'),
+                'nama_panggilan' => $this->input->post('nama_panggilan'),
+                'alamat' => $this->input->post('alamat'),
+                'email' => $this->input->post('email'),
+                'telp' => $this->input->post('telp')
+            );
+
+            $where = array('nim' => $this->input->post('nim'));
+
+            //proses/lakukan update
+            $this->MahasiswaModel->update_data($where, $data, 'mahasiswa');
+            redirect(base_url() . "MahasiswaController", 'refresh');
+        }
     }
