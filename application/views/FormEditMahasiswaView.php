@@ -51,7 +51,7 @@
 	</div>
     <!-- /.box-body -->
     <div class="box-footer">
-       &copy; Universitas Langit Inspirasi 
+       &copy; STMIK Jabar
     </div>
     <!-- /.box-footer-->
 </div>
