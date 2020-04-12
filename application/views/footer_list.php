@@ -1,7 +1,7 @@
 </div>
 <!-- /.box-body -->
 <div class="box-footer">
-    <center>Sistem Akademik <a href="http://www.langitinspirasi.co.id"><strong>STMIK JABAR</strong></a> - 2020</center>
+    <center>Sistem Akademik <a href="http://www.langitinspirasi.co.id"><strong>STMIK Jabar</strong></a> - 2020</center>
 </div>
 <!-- /.box-footer-->
 </div>
@@ -19,8 +19,6 @@
     reserved.
 </footer>
 </div>
-<!-- ./wrapper -->
-<script src="<?php echo base_url('assets/js/jquery-1.11.2.min.js') ?>"></script>
 <!-- Bootstrap 3.3.7 -->
 <script src="<?php echo base_url('assets/bower_components/bootstrap/dist/js/bootstrap.min.js') ?>"></script>
 <!-- SlimScroll -->
