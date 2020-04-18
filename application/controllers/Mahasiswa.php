@@ -357,22 +357,12 @@ class Mahasiswa extends CI_Controller
 
         //jika id nim yang dipilih tersedia maka akan dihapus
         if ($row) {
-            // menghapus data berdasarkan id-nya yaitu nim
-            if($this->MahasiswaModel->delete('mahasiswa',array('nim'->$id))){
+           // menghapus file photo
+            unlink("./upload_photo/mahasiswa/" . $row->photo);
 
-                // menampilkan informasi 'Delete Record Success' setelah data mahasiswa dihapus
-                $this->session->set_flashdata('message', 'Delete Record Success');
-
-                // menghapus file photo
-                unlink("./upload_photo/mahasiswa/".$row->photo);
-            }
-			// jika data tidak ada yang dihapus maka akan menampilkan 'Can not Delete This Record !'
-			else{
-
-                $this->session->set_flashdata('message', 'Can not Delete This Record !');
-            }
+            $this->MahasiswaModel->delete($id);
+            $this->session->set_flashdata('message', 'Delete Record Success');
             redirect(site_url('mahasiswa'));
-
         }
         //jika id nim yang dipilih tidak tersedia maka akan muncul pesan 'Record Not Found'
         else {
