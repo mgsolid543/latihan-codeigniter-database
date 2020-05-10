@@ -1,3 +1,37 @@
+<style>
+
+    @media print {
+        html, body {
+            display: block;
+            font-size: 7.5px;
+
+
+            width: 100%;
+            height: 29.7cm;
+            margin: 1mm 1mm 1mm 1mm;
+
+            /* change the margins as you want them to be. */
+
+        }
+
+        @page {
+            size: landscape;
+            margin: 0.2in 1mm 1mm 1mm;
+        }
+
+        body.content .sheet {
+            width: 100%;
+            height: 29.7cm;
+            background-color: #ff0002;
+            overflow-y: scroll;
+
+        }
+
+        /* sheet size */
+    }
+	
+</style>
+
 <section class="content-header">
     <h1>
         STMIK Jabar
@@ -14,6 +48,19 @@
     <!-- Default box -->
     <div class="box">
         <div class="box-body">
+		
+			<div id="groupbutton">
+                <div id="myDIV">
+                    <!-- Button untuk melakukan update -->
+                    <a href="#" class="btn btn-primary"
+                       onclick="myFunction();
+                               document.title = '<?php echo 'TRANSKRIP_NILAI_' . $nim; ?>';
+                               window.print();
+                               window.location.reload();">Print</a>
+                    <!-- Button cancel untuk kembali ke halaman penerimaan list -->
+                    <a href="<?php echo site_url('nilai/buatTranskrip') ?>" class="btn btn-warning">Cancel</a>
+                </div>
+            </div>
 
             <!-- Menampilkan Transkrip Nilai -->
             <?php
@@ -84,5 +131,17 @@
                     echo 0;
                 ?>
             </center>
+			
+			<script>
+                function myFunction() {
+                    var x = document.getElementById("myDIV");
+                    if (x.style.display === "none") {
+                        x.style.display = "block";
+                    } else {
+                        x.style.display = "none";
+                    }
+                }
+            </script>
+
 
 
